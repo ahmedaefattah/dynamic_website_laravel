@@ -10,7 +10,10 @@ Contact Page
 	<h1>Contact </h1>
 
 	    @if(session('success'))
-				<div class="alert alert-danger">{{ session('success') }}</div>
+			<div class="alert alert-dismissible alert-success">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				 <strong>{{ session('success') }} </strong>
+			</div>
 		@endif
 
 	
@@ -22,16 +25,16 @@ Contact Page
 		</div>
 
 			@error('name')
-			<div class="alert alert-danger">{{ $message }}</div>
+			<div class="alert alert-danger"><strong>{{ $message }}</strong></div>
 			@enderror
 
 		<div  class="form-group">
 			<label>Email - required</label>
-			<input class=" form-control @error('email') is-invalid @enderror" type="email" id="email" name="email"required="required" >
+			<input class=" form-control @error('email') is-invalid @enderror" type="email" id="email" name="email" required="required" >
 		</div>
 
 			@error('email')
-			<div class="alert alert-danger">{{ $message }}</div>
+			<div class="alert alert-danger"><strong>{{ $message }}</strong></div>
 			@enderror
 
 		<div  class="form-group">
@@ -41,7 +44,7 @@ Contact Page
 
 	    <div  class="form-group">
 			<label>Message</label>
-			<textarea class="form-control" id="message" name="message" style="height: 300px;" ></textarea>
+			<textarea class="form-control" id="message" name="message" rows="10" ></textarea>
 		</div>
 		
 		<div class="form-group">

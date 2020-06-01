@@ -51,3 +51,6 @@ textarea {
 	line-height: 40px;
 	padding-left: 10px;	
 }
+.is-invalid {
+	border-color: #e3342f;
+}

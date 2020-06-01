@@ -26,14 +26,6 @@ Post Page
 </div>      
 @stop
 
-    
-
-
-
-    
-
-
-
 @section('comment')
  <h1>Leave Comment</h1>
  
@@ -50,10 +42,10 @@ Post Page
     </div>
 		
     <div  class="form-group">
-          <textarea class=" form-control  @error('email') is-invalid @enderror"  id="comment" name="comment" placeholder="Comment" required="required"  ></textarea><br>
+          <textarea class=" form-control  @error('comment') is-invalid @enderror"  id="comment" name="comment" placeholder="Comment" required="required" rows="5"  ></textarea><br>
     </div>
         @error('comment')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="alert alert-danger"><strong>{{ $message }}</strong></div>
         @enderror
 
     <div  class="form-group">
