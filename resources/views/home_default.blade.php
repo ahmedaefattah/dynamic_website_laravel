@@ -16,7 +16,8 @@
         <div class="col-md-3" >
           <ul class="list-group">
             <li class="list-group-item"><a href="{{ url('create_post') }}">Create Post</a></li>
-            <li class="list-group-item"><a href="{{ url('show_post') }}">Show Posts</a><span class="badge">{{ DB::table('posts')->count() }}</span></li>
+            <li class="list-group-item"><a href="{{ url('show_post') }}">Show Posts</a><span class="badge">{{ DB::table('posts')->where('post_type', 'post')->count() }}</span></li>
+            <li class="list-group-item"><a href="{{ url('show_page') }}">Show Pages</a><span class="badge">{{ DB::table('posts')->where('post_type', 'page')->count() }}</span></li>
             <li class="list-group-item"><a href="{{ url('mng_posts') }}">Manage Posts</a></li>
             <li class="list-group-item"><a href="{{ url('create_user') }}">Create User</a></li>
             <li class="list-group-item"><a href="{{ url('mng_users') }}">Manage Users</a></li>

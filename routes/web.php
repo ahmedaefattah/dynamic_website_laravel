@@ -37,6 +37,7 @@ Route::get('create_post', 'PostController@create');
 Route::post('create_post', 'PostController@store');
 Route::get('mng_posts',   'PostController@index');
 Route::get('show_post',   'PostController@show_post');
+Route::get('show_page',   'PostController@show_page');
 Route::get('show_post/{id}', 'PostController@show');
 Route::get('edit_post/{id}', 'PostController@edit');
 Route::patch('update_post/{id}', 'PostController@update');

@@ -27,6 +27,12 @@ class PostController extends Controller
         return view('show_post', compact('posts'));
     }
 
+     public function show_page()
+    {
+         $pages = Post::where('post_type', 'page')->get();
+        return view('show_page', compact('pages'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
