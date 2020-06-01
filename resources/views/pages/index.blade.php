@@ -12,6 +12,7 @@ Home Page
 <div class="row">
 	<div class="col-sm-12">
 		<h1 >{!! $post->title !!} </h1>
+		<h4><small><i>by Admin, {{ date('M d, Y h:i A', strtotime($post->created_at)) }}</i></small></h4>
 	</div>
 </div>
 <div class="row">

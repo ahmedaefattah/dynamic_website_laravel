@@ -10,6 +10,7 @@ Post Page
 <div class="row">
         <div class="col-sm-12">
         <h1>{!! $post->title !!} </h1>
+        <h4><small><i>by Admin, {{ date('M d, Y h:i A', strtotime($post->created_at)) }}</i></small></h4>
         </div>
 </div>
    
@@ -57,18 +58,32 @@ Post Page
 @stop
 
 @section('showcomment')
- 
+
+ @if($comments->count() > 0)
+ <div class="row">
+  <div class="col-md-12">
+     <h2>Comments <span class="label label-default">{{ $comments->count() }}</span></h2>
+  </div>
+ </div>
+
  @foreach( $comments as $comment)
+
   <div class="media">
     <div class="media-left">
       <img src="{{ url('images/img_avatar1.png') }} " class="media-object" style="width:60px">
     </div>
     <div class="media-body">
-      <h4 class="media-heading">{{ $comment->name }}<small><i> {{ $comment->created_at }}</i></small></h4>
+      <h4 class="media-heading">{{ $comment->name }}<small><i> {{ date('M d, Y h:i A', strtotime($comment->created_at)) }}</i></small></h4>
        <p>{{ $comment->comment }}</p>
    </div>   
- </div>    
- @endforeach
+ </div> 
+  @endforeach
+ @else 
+ <div class="media">
+    <h1>No comments</h1>
+ </div> 
+ @endif  
+
 @stop
 
 
