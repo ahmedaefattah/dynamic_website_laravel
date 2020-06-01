@@ -15,6 +15,7 @@
   <thead>
     <tr>
       <th>POST</th>
+      <th>AUTHOR</th>
       <th>Created Date</th>
       <th>Control</th>
     </tr>
@@ -23,6 +24,7 @@
      @foreach($posts as $post)
   <tr>
     <td>{{ $post->title }}</td>
+    <td>{{ $post->user->name }}</td>
     <td>{{ $post->created_at }}</td>
     <td>
       <a href="{{ url('edit_post', $post->postID) }}" class="btn btn-primary btn-sm glyphicon glyphicon-edit"></a>

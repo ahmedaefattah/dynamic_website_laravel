@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 
 class BlogController extends Controller
 {
 
 	 public function index() {
-        $posts =  Post::all()->where('post_type', '=', 'post');
-    	return view('pages.index', compact('posts'));
-
+    
+        $posts =  Post::all()->where('post_type', '=', 'post');        
+    	return view('pages.index', compact('posts'));  
     }
 
     public function blog() {

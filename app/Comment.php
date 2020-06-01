@@ -20,9 +20,9 @@ class Comment extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','email','comment','created_at' ,'postID'];
+    protected $fillable = ['name','email','comment','postID'];
 
-    public $timestamps = false;
+    public $timestamps = true;
 
    
    

@@ -11,7 +11,7 @@ BlogPage
 <div class="row">
 	<div class="col-sm-12">
 		<a href="{{ url('post', $post->postID ) }}" ><h1 id="{{ $post->postID }}">{!! $post->title !!} </h1></a>
-		<h4><small><i>by Admin, {{ date('M d, Y h:i A', strtotime($post->created_at)) }}</i></small></h4>
+		<h4><small><i>by {{$post->user->name}}, {{ date('M d, Y h:i A', strtotime($post->created_at)) }}</i></small></h4>
 	</div>
 </div>
 

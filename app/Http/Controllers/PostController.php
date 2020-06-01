@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 
 class PostController extends Controller
@@ -21,7 +22,8 @@ class PostController extends Controller
     }
     
      public function show_post()
-    {   $posts =  Post::all();
+    {
+         $posts = Post::where('post_type', 'post')->get();
         return view('show_post', compact('posts'));
     }
 
@@ -66,8 +68,8 @@ class PostController extends Controller
         $post = new Post;
         $post->title             = $request->title;
         $post->content           = $request->content;
-        $post->created_at        = now();
         $post->featured_image    = $path;
+        $post->userID                = Auth::user()->id;
         $post->save();
         return redirect('mng_posts')->with('success', 'Post created successfully.');
     }
@@ -130,6 +132,7 @@ class PostController extends Controller
             $post->title             = $request->title;
             $post->content           = $request->content;
             $post->featured_image    = $path;
+            $post->userID                = Auth::user()->id;
             $post->save();
             return redirect('mng_posts')->with('success', 'Post updated successfully.');
     }

@@ -17,9 +17,11 @@ class CreatePostsTable extends Migration
             $table->increments('postID',11);
             $table->string('title',100);
             $table->text('content');
-            $table->dateTime('created_at');
             $table->string('featured_image')->nullable();
             $table->string('post_type',20)->default('post');
+            $table->unsignedBigInteger('userID');
+            $table->foreign('userID')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

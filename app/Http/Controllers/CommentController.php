@@ -26,7 +26,6 @@ class CommentController extends Controller
         $comment->name        = request("name", 'Anonymous');
         $comment->email       = $request->email;
         $comment->comment     = $request->comment;
-        $comment->created_at  = now();
         $comment->postID      = $request->postID;
         $comment->save();
         return redirect()->back();

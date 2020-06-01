@@ -20,9 +20,9 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','content','created_at','featured_image'];
+    protected $fillable = ['title','content','featured_image','post_type','userID'];
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     /**
      * Get the comments for the blog post.
@@ -32,5 +32,11 @@ class Post extends Model
         return $this->hasMany('App\Comment','postID','postID');
     }
 
-   
+   /**
+     * Get the user that owns the post.
+    */
+    public function user()
+    {
+        return $this->belongsTo('App\User','userID', 'id');
+    }
 }

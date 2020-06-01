@@ -15,7 +15,7 @@
   <thead>
     <tr>
       <th>User</th>
-     
+       <th>Email</th>
       <th>Created Date</th>
       <th>Control</th>
     </tr>
@@ -24,7 +24,7 @@
 @foreach($users as $user)
  <tr>
     <td>{{ $user->name}}</td>
-
+    <td>{{ $user->email}}</td>
     <td>{{ $user->created_at}}</td>
     <td>
       <a href="{{ url('edit_user', $user->id) }}" class="btn btn-primary btn-sm glyphicon glyphicon-edit"></a>
