@@ -21,7 +21,7 @@
 		<div class="alert alert-danger">{{ $message }}</div>
 	@enderror
 
-    <input  type="file" name="featured_image"  ><br>
+    <input  type="file" name="featured_image" accept="image/x-png,image/gif,image/jpeg" ><br>
     
    <button class="btn btn-primary" type="submit" name="submit">Edit Post</button>
 
