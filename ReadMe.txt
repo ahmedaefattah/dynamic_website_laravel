@@ -36,7 +36,7 @@ Create Model Files  app folder
  Setup authentication
 ========================
 laravel 5.8.x
-===============
+================
 >> php artisan make:auth
 ====================================================================================================
 laravel 7.x
